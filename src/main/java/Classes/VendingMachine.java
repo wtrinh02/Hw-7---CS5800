@@ -2,6 +2,7 @@ package Classes;
 import States.*;
 import ChainOfResponsibilities.*;
 
+import javax.swing.plaf.nimbus.State;
 import java.util.HashMap;
 
 public class VendingMachine {
@@ -71,6 +72,9 @@ public class VendingMachine {
 
     public void dispenseSnack(){
         state.dispenseSnack(this);
+    }
+    public StateOfVendingMachine getState(){
+        return state;
     }
 
 }
