@@ -2,7 +2,6 @@ package Classes;
 import States.*;
 import ChainOfResponsibilities.*;
 
-import javax.swing.plaf.nimbus.State;
 import java.util.HashMap;
 
 public class VendingMachine {
