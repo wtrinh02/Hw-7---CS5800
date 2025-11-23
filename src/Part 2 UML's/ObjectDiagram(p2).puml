@@ -1,0 +1,129 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+object "testDocument: Document"{
+characters = [H,e,l,l,o,w,o,r,l,d,C,S,5,8,0,0]
+
+}
+object "propertiesFactory: CharacterPropertiesFactory"{
+flyweights = [{"Arial16Black",property1},{"Arial14Black",property2},{"Verdana18Blue",property3},{"Verdana12Red",property4}, {"Calibri99Blue",property5}]
+}
+
+object "H:Character"{
+    char = H
+}
+object "e:Character"{
+    char = e
+}
+object "first_l:Character"{
+    char = l
+}
+object "second_l:Character"{
+    char = l
+}
+object "first_o:Character"{
+    char = o
+}
+object "w:Character"{
+    char = w
+}
+object "second_o:Character"{
+    char = o
+}
+object "r:Character"{
+    char = r
+}
+object "third_l:Character"{
+    char = l
+}
+object "d:Character"{
+    char = d
+}
+object "C:Character"{
+    char = C
+}
+object "S:Character"{
+    char = S
+}
+object "five:Character"{
+    char = 5
+}
+object "eight:Character"{
+    char = 8
+}
+object "first_0:Character"{
+    char = 0
+}
+object "second_0:Character"{
+    char = 0
+}
+
+object "property1: CharacterProperties"{
+font = "Arial"
+color ="Black"
+size = 16
+}
+object "property2: CharacterProperties"{
+font = "Arial"
+color ="Black"
+size = 14
+}
+object "property3: CharacterProperties"{
+font = "Verdana"
+color ="Blue"
+size = 18
+}
+object "property4: CharacterProperties"{
+font = "Verdana"
+color ="Red"
+size = 12
+}
+object "property5: CharacterProperties"{
+font = "Calibri"
+color ="Blue"
+size = 99
+}
+
+"testDocument: Document" *-- "propertiesFactory: CharacterPropertiesFactory"
+"testDocument: Document" *-- "H:Character"
+"testDocument: Document" *-- "e:Character"
+"testDocument: Document" *-- "first_l:Character"
+"testDocument: Document" *-- "second_l:Character"
+"testDocument: Document" *-- "first_o:Character"
+"testDocument: Document" *-- "w:Character"
+"testDocument: Document" *-- "second_o:Character"
+"testDocument: Document" *-- "r:Character"
+"testDocument: Document" *-- "third_l:Character"
+"testDocument: Document" *-- "d:Character"
+"testDocument: Document" *-- "C:Character"
+"testDocument: Document" *-- "S:Character"
+"testDocument: Document" *-- "five:Character"
+"testDocument: Document" *-- "eight:Character"
+"testDocument: Document" *-- "first_0:Character"
+"testDocument: Document" *-- "second_0:Character"
+
+"propertiesFactory: CharacterPropertiesFactory" *-- "property1: CharacterProperties"
+"propertiesFactory: CharacterPropertiesFactory" *-- "property2: CharacterProperties"
+"propertiesFactory: CharacterPropertiesFactory" *-- "property3: CharacterProperties"
+"propertiesFactory: CharacterPropertiesFactory" *-- "property4: CharacterProperties"
+"propertiesFactory: CharacterPropertiesFactory" *-- "property5: CharacterProperties"
+
+"H:Character" o--"property5: CharacterProperties"
+"e:Character" o--"property2: CharacterProperties"
+"first_l:Character" o--"property2: CharacterProperties"
+"second_l:Character" o--"property2: CharacterProperties"
+"first_o:Character" o--"property2: CharacterProperties"
+"w:Character" o--"property5: CharacterProperties"
+"second_o:Character" o--"property2: CharacterProperties"
+"r:Character" o--"property2: CharacterProperties"
+"third_l:Character" o--"property2: CharacterProperties"
+"d:Character" o--"property2: CharacterProperties"
+"C:Character" o--"property3: CharacterProperties"
+"S:Character" o--"property3: CharacterProperties"
+"five:Character" o--"property4: CharacterProperties"
+"eight:Character" o--"property4: CharacterProperties"
+"first_0:Character" o--"property4: CharacterProperties"
+"second_0:Character" o--"property4: CharacterProperties"
+
+
+@enduml
